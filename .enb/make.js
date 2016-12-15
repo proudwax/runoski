@@ -75,7 +75,7 @@ module.exports = function(config) {
             [enbBemTechs.files],
 
             // css
-            [techs.postcss, {
+            [techs.postcss.postcss, {
                 target: '?.no-grid.css',
                 plugins: techs.postcssPlugins
             }],
