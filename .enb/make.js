@@ -76,22 +76,9 @@ module.exports = function(config) {
 
             // css
             [techs.postcss, {
-                target: '?.css',
+                target: '?.no-grid.css',
                 plugins: techs.postcssPlugins
             }],
-
-            // postcss & css
-            // [techs.postcss.postcss, {
-            //     target: '?.this-post.css',
-            //     sourceSuffixes : ['post.css', 'css', 'ie.post.css', 'ie.css'],
-            //     plugins : techs.postcss.plugins()
-            // }],
-
-            // merge stylus & postcss & css
-            // [techs.fileMerge, {
-            //     target: '?.no-grid.css',
-            //     sources: ['?.this-post.css', '?.this-stylus.css']
-            // }],
 
             // sharps
             [require('sharps').enb, {
@@ -100,7 +87,7 @@ module.exports = function(config) {
                     gutter: '10px',
                     flex: 'flex'
                 },
-                source: '?.no-grid.css' // there is the source
+                source: '?.no-grid.css'
             }],
 
             // bemtree
