@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Stub to start a new BEM project
 
 Project-stub is a template project repository used for BEM projects creation. It contains the minimal configuration files and folders you will need for quick start from scratch.
