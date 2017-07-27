@@ -1,0 +1,37 @@
+:block(form) {
+    box-sizing: border-box;
+    position: relative;
+
+    margin: 0 auto;
+    padding: 16px;
+
+    width: 50vw;
+
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.4);
+
+    &:elem(header) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 16px;
+    }
+
+    &:elem(content) {
+        margin-bottom: 16px;
+    }
+
+    &:elem(footer) {}
+
+    &:elem(title) {
+        font-size: 32px;
+        line-height: 48px;
+        font-weight: 600;
+        letter-spacing: -.02em;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    &:elem(action) {
+        text-align: right;
+    }
+}
