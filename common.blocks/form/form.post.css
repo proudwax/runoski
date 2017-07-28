@@ -2,7 +2,7 @@
     box-sizing: border-box;
     position: relative;
 
-    padding: 10vw 0;
+    padding: 40px 20px;
 
     &:elem(container) {
         box-sizing: border-box;
@@ -15,7 +15,8 @@
         max-width: 800px;
 
         background-color: rgba(255, 255, 255, 1);
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.4);
+        /*box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.4);*/
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 21px 40px 0 rgba(0,0,0,.19);
     }
 
     &:elem(header) {
@@ -42,10 +43,19 @@
     &:elem(action) {
         text-align: right;
     }
+
+    &:elem(result) {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
 }
 
 @media (--small-only) {
     :block(form) {
+        padding-left: 0;
+        padding-right: 0;
+
         &:elem(container) {
             width: 100%;
         }

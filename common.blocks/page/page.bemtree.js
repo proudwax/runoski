@@ -1,5 +1,7 @@
 block('page').content()(function() {
     return {
-        block: 'form'
+        block: 'form',
+        id: 'myForm',
+        action: '#'
     };
 });
