@@ -2,13 +2,21 @@
     box-sizing: border-box;
     position: relative;
 
-    margin: 0 auto;
-    padding: 16px;
+    padding: 10vw 0;
 
-    width: 50vw;
+    &:elem(container) {
+        box-sizing: border-box;
+        position: relative;
 
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.4);
+        margin: 0 auto;
+        padding: 16px;
+
+        width: 50vw;
+        max-width: 800px;
+
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.4);
+    }
 
     &:elem(header) {
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -33,5 +41,21 @@
 
     &:elem(action) {
         text-align: right;
+    }
+}
+
+@media (--small-only) {
+    :block(form) {
+        &:elem(container) {
+            width: 100%;
+        }
+    }
+}
+
+@media (--medium-only) {
+    :block(form) {
+        &:elem(container) {
+            width: 75vw;
+        }
     }
 }

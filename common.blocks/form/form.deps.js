@@ -3,6 +3,10 @@
         'i-bem-dom'
     ],
     shouldDeps: [
-        { block: 'button', mods: { theme: 'islands', size: 'm', view: 'action', type: 'submit' } }
+        'mq',
+        'form-field',
+        'label',
+        { block: 'input', mods: { theme: 'islands', size: 'l', width: 'available', 'has-clear': true } },
+        { block: 'button', mods: { theme: 'islands', size: 'l', view: 'action', type: 'submit' } }
     ]
 })

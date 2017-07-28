@@ -1,0 +1,15 @@
+:block(label) {
+    &:mod(required) {
+        &:after {
+            position: relative;
+            top: -3px;
+            
+            display: inline-block;
+            content: '*';
+
+            padding-left: 2px;
+
+            color: #e61400;
+        }
+    }
+}

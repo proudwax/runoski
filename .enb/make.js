@@ -12,6 +12,7 @@ var techs = {
             require('postcss-import')(),
             require('postcss-each'),
             require('postcss-for'),
+            require('postcss-custom-media'),
             require('postcss-simple-vars')(),
             require('postcss-calc')(),
             require('postcss-nested'),
@@ -57,18 +58,8 @@ module.exports = function(config) {
 
             // css
             [techs.postcss, {
-                target: '?.no-grid.css',
+                target: '?.css',
                 plugins: techs.postcssPlugins
-            }],
-
-            // sharps
-            [require('sharps').enb, {
-                config: {
-                    maxWidth: '1200px',
-                    gutter: '10px',
-                    flex: 'flex'
-                },
-                source: '?.no-grid.css'
             }],
 
             // bemtree
