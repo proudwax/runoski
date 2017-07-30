@@ -32,5 +32,27 @@ block('form-field')(
             applyNext().id = ctx._id;
             return applyNext();
         })
+    ),
+
+    match((ctx, json) => { return json.mods.required; })(
+        content()((ctx, json) => {
+            return [
+                applyNext(),
+                {
+                    elem: 'message',
+                    content: [
+                        {
+                            block: 'popup',
+                            mods: {
+                                theme: 'islands',
+                                target: 'anchor',
+                                autoclosable: true
+                            },
+                            content: 'popup content'
+                        }
+                    ]
+                }
+            ];
+        })
     )
 )

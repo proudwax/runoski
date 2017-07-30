@@ -6,23 +6,38 @@ provide(bemDom.declBlock(this.name, {
             'inited' : function() {
                 var _this = this;
 
-                _this._data = [];
+                window.MyForm = (function () {
 
-                window.MyForm = {
-                    validate : function () {
-                        this.getData();
-                    },
-                    getData: function () {
-                        _this.findChildBlocks(FormField)._entities.map(function (item, i) {
+                    return {
+                        validate : function () {
+                            var errorFields = [];
 
-                        });
-                    },
-                    setData: function (obj) {},
-                    submit: function () {
-                        this.validate();
-                        console.log(this);
-                    }
-                };
+                            _this.findChildBlocks(FormField)._entities.forEach(function (item, i) {
+                                // return item.validate();
+                                if (true) {
+                                    errorFields.push('name' + i);
+                                }
+                            });
+
+                            if (!!!errorFields[0]) {
+                                return { isValid: true };
+                            } else {
+                                return { isValid: false, errorFields: errorFields };
+                            }
+                        },
+                        getData: function () {
+                            return _this.findChildBlocks(FormField)._entities.map(function (item, i) {
+                                return item.getData();
+                            });
+                        },
+                        setData: function (obj) {},
+                        submit: function () {
+                            console.log(this.validate());
+                        }
+                    };
+                }());
+
+                this._data = MyForm.getData();
 
                 this._domEvents().on('submit', function(e) {
                     e.preventDefault();
