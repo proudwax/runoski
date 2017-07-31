@@ -1,9 +1,9 @@
 block('form-request').content()(function() {
 
     var fields = [
-        // { label: 'Name', type: 'input', name: 'Name', placeholder: 'Your Name', required: 'Required field', validate: 'pattern', pattern: { pattern: { value: '^([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я]{3,})\\s*$', message: 'Introduce correct  name (3 words)' } } },
+        { label: 'Name', type: 'input', name: 'Name', placeholder: 'Your Name', required: 'Required field', validate: 'pattern', pattern: { pattern: { value: '^([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я-]{3,})\\s*$', message: 'Introduce correct  name (3 words)' } } },
         { label: 'Phone', type: 'input', name: 'Phone', placeholder: 'Your phone', required: 'Required field', validate: 'phone', pattern: { phone: { mask: '+7(000)000-00-00' , max: 30, message: 'Introduce correct phone (sum of phone numbers max 30)' } } },
-        // { label: 'Email', type: 'input', name: 'Email', placeholder: 'Your Email', required: 'Required field', validate: 'email-list', pattern: { 'email-list': { 'domains-list': ['ya.ru', 'yandex.ru', 'yandex.ua', 'yandex.by', 'yandex.kz', 'yandex.com'], message: 'Introduce correct Email list' } } }
+        { label: 'Email', type: 'input', name: 'Email', placeholder: 'Your Email', required: 'Required field', validate: 'email-list', pattern: { 'email-list': { 'domains-list': ['ya.ru', 'yandex.ru', 'yandex.ua', 'yandex.by', 'yandex.kz', 'yandex.com'], message: 'Introduce correct Email list' } } }
     ];
 
     var bemjson = fields.map(function (item) {
@@ -84,9 +84,14 @@ block('form-request').content()(function() {
                 elem: 'footer',
                 content: [
                     {
-                        block: 'button',
-                        mods: { theme: 'islands', size: 'l', type: 'submit', view : 'action' },
-                        text: 'Send'
+                        elem: 'action',
+                        content: [
+                            {
+                                block: 'button',
+                                mods: { theme: 'islands', size: 'l', type: 'submit', view : 'action' },
+                                text: 'Send'
+                            }
+                        ]
                     }
                 ]
             }

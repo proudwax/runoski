@@ -27,4 +27,8 @@
         line-height: 15px;
         color: #aaa;
     }
+
+    &:elem(action) {
+        text-align: right;
+    }
 }

@@ -33,26 +33,34 @@ provide(function(field) {
     field.findChildBlock(Input).findChildElem('control').domElem.mask(field.params.phone.mask, option);
 
     return function(val) {
+
+        if (!val) {
+            return {
+                field : field.getName() || field.getId(),
+                message : message
+            };
+        }
+
         var numbs = val.match(/\d/g),
             sumNumbs = numbs.reduce((total, curVal) => {
                 return total + Number(curVal);
             }, 0);
 
-        if(field.params.phone.min && sumNumbs < field.params.phone.min) {
+        if (field.params.phone.min && sumNumbs < field.params.phone.min) {
             return {
                 field : field.getName() || field.getId(),
                 message : message
             };
         }
 
-        if(field.params.phone.max && sumNumbs > field.params.phone.max) {
+        if (field.params.phone.max && sumNumbs > field.params.phone.max) {
             return {
                 field : field.getName() || field.getId(),
                 message : message
             };
         }
 
-        return !val || flag ? null : {
+        return flag ? null : {
             field : field.getName() || field.getId(),
             message : message
         };
