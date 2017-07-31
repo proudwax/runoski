@@ -3,6 +3,7 @@
         { block: 'fonts', mods: { 'open-sans': true } },
     ],
     shouldDeps: [
-        'form'
+        'form-request',
+        { block: 'content', mods: { form: 'request' } }
     ]
 })

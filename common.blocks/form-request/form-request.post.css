@@ -1,0 +1,17 @@
+:block(form-request) {
+    display: block;
+
+    & :block(form-field) {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    & :block(label) {
+        box-sizing: border-box;
+        min-width: 20%;
+
+        padding-right: 8px;
+        text-align: right;
+    }
+}

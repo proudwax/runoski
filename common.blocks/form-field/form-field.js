@@ -1,27 +1,37 @@
-modules.define('form-field', ['i-bem-dom', 'input', 'popup'], function(provide, bemDom, Input, Popup) {
+/**
+ * @module form-field
+ */
+modules.define('form-field', ['i-bem-dom'],
+    function(provide, bemDom, FormField) {
+/**
+ * Field block
+ */
+provide(bemDom.declBlock(FormField, /** @lends form-field.prototype */{
 
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        'js': {
-            'inited' : function() {
-                this._input = this.findChildBlock(Input);
-                this._popup = this.findChildBlock(Popup)
-                                    .setAnchor(this._input);
+    onSetMod : {
+        'focused' : {
+            'true' : function() {
+                this.__base.apply(this, arguments);
 
-                this._events(Input).on({ modName: 'focused', modVal: '' }, function() {
-                    console.log(this);
-                    this._popup.setMod('visible');
-                });
+                this.hasMod('invalid') && this.getMessage().show();
+            },
+            '' : function() {
+                this.__base.apply(this, arguments);
+
+                this.getMessage() && this.getMessage().hide();
             }
         }
     },
-
-    getData: function () {
-        return {
-            name : this._input.findChildElem('control').domElem[0].name,
-            value: this._input.getVal() };
+    /**
+     * debug override
+     * @returns {Promise}
+     */
+    validate : function() {
+        return this.__base.apply(this, arguments).then(function(error) {
+            error && console.warn(error); // jshint ignore:line
+            return error;
+        });
     }
-
 }));
 
 });
