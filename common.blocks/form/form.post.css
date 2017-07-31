@@ -1,5 +1,7 @@
 :block(form) {
-    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
 
     &:elem(header) {
         position: relative;
@@ -24,16 +26,5 @@
         font-weight: 400;
         line-height: 15px;
         color: #aaa;
-    }
-
-    &:elem(action) {
-        box-sizing: border-box;
-        margin-top: 32px;
-        padding-top: 8px;
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
-    &:elem(action-item) {
-        margin-top: 8px;
     }
 }

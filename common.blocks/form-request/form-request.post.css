@@ -1,5 +1,7 @@
 :block(form-request) {
-    display: block;
+    max-width: 50%;
+    width: 100%;
+    margin: 20px auto 50px;
 
     & :block(form-field) {
         display: flex;
@@ -12,6 +14,23 @@
         min-width: 20%;
 
         padding-right: 8px;
+        white-space: nowrap;
         text-align: right;
+    }
+}
+
+@media (--small-only) {
+    :block(form-request) {
+        max-width: 100%;
+
+        :block(form-field) {
+            flex-flow: row wrap;
+        }
+        :block(label), :block(input) {
+            max-width: 100%;
+            width: 100%;
+
+            text-align: left;
+        }
     }
 }

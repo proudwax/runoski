@@ -12,7 +12,15 @@ provide(function(field) {
         };
     }
 
+    if(field.params.phone.min) {
+        field.params.phone.min = Number(field.params.phone.min);
+    }
+    if(field.params.phone.max) {
+        field.params.phone.max = Number(field.params.phone.max);
+    }
+
     var flag = false,
+        message = field.getValidationMessage('phone') || DEFAULT_MESSAGE,
         option = {
         onComplete: function(cep) {
             flag = true;
@@ -25,9 +33,28 @@ provide(function(field) {
     field.findChildBlock(Input).findChildElem('control').domElem.mask(field.params.phone.mask, option);
 
     return function(val) {
+        var numbs = val.match(/\d/g),
+            sumNumbs = numbs.reduce((total, curVal) => {
+                return total + Number(curVal);
+            }, 0);
+
+        if(field.params.phone.min && sumNumbs < field.params.phone.min) {
+            return {
+                field : field.getName() || field.getId(),
+                message : message
+            };
+        }
+
+        if(field.params.phone.max && sumNumbs > field.params.phone.max) {
+            return {
+                field : field.getName() || field.getId(),
+                message : message
+            };
+        }
+
         return !val || flag ? null : {
             field : field.getName() || field.getId(),
-            message : field.getValidationMessage('phone') || DEFAULT_MESSAGE
+            message : message
         };
     };
 });

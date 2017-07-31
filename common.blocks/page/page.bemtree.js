@@ -1,11 +1,6 @@
 block('page').content()(function() {
     return {
-        block: 'content',
-        mods: { form: 'request' },
-        content: [
-            {
-                block: 'form-request'
-            }
-        ]
+        block: 'form-request',
+        mix: { block: 'content', mods: { form: 'request' } }
     };
 });
