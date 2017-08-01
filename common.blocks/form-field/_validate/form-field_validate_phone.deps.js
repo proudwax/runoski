@@ -1,6 +1,6 @@
 [{
     shouldDeps : [
-        { mod : 'has-validation' },
-        { block : 'validation', mods : { phone : true } }
+        { mod: 'has-validation' },
+        { block: 'validation', mods: { phone: true } }
     ]
 }];
