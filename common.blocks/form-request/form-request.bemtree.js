@@ -1,4 +1,6 @@
 block('form-request').content()(function() {
+    var action = this.ctx.action,
+        title = this.ctx.title;
 
     var fields = [
         { label: 'Name', type: 'input', val: 'Test test Test-Test', name: 'Name', placeholder: 'Your Name', required: 'Required field', validate: 'pattern', pattern: { pattern: { value: '^([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я-]{3,})\\s*$', message: 'Incorrect  name (3 words)' } } },
@@ -60,7 +62,7 @@ block('form-request').content()(function() {
             'has-validation' : true,
             async: true
         },
-        action: '/resp-progress.json',
+        action: action,
         method: 'GET',
         id: 'myForm',
         content: [
@@ -69,7 +71,7 @@ block('form-request').content()(function() {
                 content: [
                     {
                         elem: 'title',
-                        content: 'Request'
+                        content: title
                     },
                     {
                         elem: 'desc',
