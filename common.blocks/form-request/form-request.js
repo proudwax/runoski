@@ -28,6 +28,25 @@ provide(bemDom.declBlock(this.name, {
                             }
                         }.bind(this));
                 }.bind(this));
+
+                // console.log(this._form.getVal());
+
+                window[this.domElem[0].id] = (function () {
+                    return {
+                        validate: function () {
+
+                        },
+                        getData: function () {
+                            return _this._form.getVal();
+                        },
+                        setData: function (obj) {
+                            return _this;
+                        },
+                        submit: function () {
+                            return _this;
+                        }
+                    }
+                }());
             }
         }
     }

@@ -11,7 +11,7 @@ block('form-request').content()(function() {
     var bemjson = fields.map(function (item) {
         return {
             block: 'form-field',
-            name: item.type,
+            name: item.name,
             mods : {
                 theme: 'islands',
                 type: item.type,
@@ -46,7 +46,7 @@ block('form-request').content()(function() {
                         width: 'available',
                         size : 'l'
                     },
-                    name: item.name,
+                    // name: item.name,
                     val: item.val != '' ? item.val : undefined,
                     autocomplete: false,
                     placeholder: item.placeholder
