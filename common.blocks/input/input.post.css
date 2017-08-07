@@ -1,4 +1,8 @@
 :block(input) {
+    &:mod(theme islands) {
+        font-family: inherit;
+    }
+
     &:mod(theme islands)&:mod(focused)&:mod(invalid) {
         &:before {
             box-shadow: 0 0 0 1px #c00, inset 0 0 0 1px #c00;

@@ -42,7 +42,7 @@ provide(function(field) {
         }
 
         var numbs = val.match(/\d/g),
-            sumNumbs = numbs.reduce((total, curVal) => {
+            sumNumbs = numbs.reduce(function(total, curVal) {
                 return total + Number(curVal);
             }, 0);
 

@@ -1,6 +1,6 @@
 ({
     mustDeps: [
-        { block: 'fonts', mods: { 'open-sans': true } },
+        { block: 'fonts', mods: { 'system-ui': true } },
     ],
     shouldDeps: [
         'form-request',

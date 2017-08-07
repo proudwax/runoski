@@ -3,9 +3,9 @@ block('form-request').content()(function() {
         title = this.ctx.title;
 
     var fields = [
-        { label: 'Name', type: 'input', val: 'Test test Test-Test', name: 'Name', placeholder: 'Your Name', required: 'Required field', validate: 'pattern', pattern: { pattern: { value: '^([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я-]{3,})\\s*$', message: 'Incorrect  name (3 words)' } } },
-        { label: 'Phone', type: 'input', val: '+7111111111', name: 'Phone', placeholder: 'Your phone', required: 'Required field', validate: 'phone', pattern: { phone: { mask: '+7(000)000-00-00' , max: 30, message: 'Incorrect phone (sum of phone numbers max 30)' } } },
-        { label: 'Email', type: 'input', val: 'test@ya.ru', name: 'Email', placeholder: 'Your Email', required: 'Required field', validate: 'email-list', pattern: { 'email-list': { 'domains-list': ['ya.ru', 'yandex.ru', 'yandex.ua', 'yandex.by', 'yandex.kz', 'yandex.com'], message: 'Incorrect Email' } } }
+        { label: 'Name', type: 'input', val: 'Test test Test-Test', name: 'name', placeholder: 'Your Name', required: 'Required field', validate: 'pattern', pattern: { pattern: { value: '^([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я]{3,})\\s([A-Za-zА-Яа-я-]{3,})\\s*$', message: 'Incorrect  name (3 words)' } } },
+        { label: 'Phone', type: 'input', val: '+7111111111', name: 'phone', placeholder: 'Your phone', required: 'Required field', validate: 'phone', pattern: { phone: { mask: '+7(000)000-00-00' , max: 30, message: 'Incorrect phone (sum of phone numbers max 30)' } } },
+        { label: 'Email', type: 'input', val: 'test@ya.ru', name: 'email', placeholder: 'Your Email', required: 'Required field', validate: 'email-list', pattern: { 'email-list': { 'domains-list': ['ya.ru', 'yandex.ru', 'yandex.ua', 'yandex.by', 'yandex.kz', 'yandex.com'], message: 'Incorrect Email' } } }
     ];
 
     var bemjson = fields.map(function (item) {
@@ -46,7 +46,6 @@ block('form-request').content()(function() {
                         width: 'available',
                         size : 'l'
                     },
-                    // name: item.name,
                     val: item.val != '' ? item.val : undefined,
                     autocomplete: false,
                     placeholder: item.placeholder
