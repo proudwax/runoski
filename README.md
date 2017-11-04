@@ -2,6 +2,8 @@
 
 Project-stub is a template project repository used for BEM projects creation. It contains the minimal configuration files and folders you will need for quick start from scratch.
 
+[![Build Status](https://travis-ci.org/bem/project-stub.svg?branch=master)](https://travis-ci.org/bem/project-stub)
+
 There are two main BEM libraries are linked here by default:
 
 * [bem-core](https://en.bem.info/libs/bem-core/)
@@ -30,11 +32,11 @@ cd my-bem-project
 npm install
 ```
 
-**Note:** Do not use `root` rights to install npm and bower dependencies. bower dependencies are installed in the `libs` directory by `npm postinstall`.
+**Note:** Do not use `root` rights to install `npm` dependencies.
 
 ## Usage
 
-You could use [ENB](https://en.bem.info/toolbox/enb/) to build the project.
+You may use [ENB](https://en.bem.info/toolbox/enb/) or `gulp` to build the project.
 
 You can run `enb` commands via `./node_modules/.bin/enb`.
 
@@ -54,7 +56,7 @@ To be able to run commands without typing a full path to an executable file (`./
 export PATH=./node_modules/.bin:$PATH
 ```
 
-Now you can use `enb` or `gulp` from any point of your project.
+Now you can use `enb` or `gulp` from the root of your project.
 
 ```bash
 enb make
@@ -91,17 +93,11 @@ npm start -- --port=8181
 
 #### Stop the server
 
-Press `Ctrl` + `C` or `⌘` + `C` (for MAC devices) while the terminal is your active window to stop the server.
+Press `Ctrl` + `C` while the terminal is your active window to stop the server.
 
 #### Add a block
 
-If you want to use `bem-tools` to create new blocks, you should install additional dependencies:
-
-```bash
-npm i ym --save-dev
-```
-
-Now it's possible to create blocks with `bem create` command:
+It is possible to create blocks with `bem create` command:
 
 ```bash
 bem create new-block

@@ -1,25 +1,47 @@
+const path = require('path');
+
 const Builder = require('gulp-bem-bundle-builder');
 const bundler = require('gulp-bem-bundler-fs');
+
 const gulp = require('gulp');
-const path = require('path');
-const postcss = require('gulp-postcss');
 const debug = require('gulp-debug');
-const csso = require('gulp-csso');
 const filter = require('through2-filter').obj;
 const merge = require('merge2');
 const concat = require('gulp-concat');
+const gulpif = require('gulp-if');
+const gulpOneOf = require('gulp-one-of');
 const uglify = require('gulp-uglify');
-const bemhtml = require('gulp-bem-xjst').bemhtml;
-const toHtml = require('gulp-bem-xjst').toHtml;
+
+const bemxjst = require('gulp-bem-xjst');
+const bemhtml = bemxjst.bemhtml;
+const toHtml = bemxjst.toHtml;
+
+const postcss = require('gulp-postcss');
+const postcssImport = require('postcss-import');
+const postcssEach = require('postcss-each');
+const postcssFor = require('postcss-for');
+const postcssSimpleVars = require('postcss-simple-vars');
+const postcssCalc = require('postcss-calc');
+const postcssNested = require('postcss-nested');
+const rebemCss = require('rebem-css');
+const postcssUrl = require('postcss-url');
+const autoprefixer = require('autoprefixer');
+const postcssReporter = require('postcss-reporter');
+const csso = require('gulp-csso');
+
+const YENV = process.env.YENV || 'development';
+const isProd = YENV === 'production';
+
+const pathToYm = require.resolve('ym');
 
 const builder = Builder({
     levels: [
-        'libs/bem-core/common.blocks',
-        'libs/bem-core/desktop.blocks',
-        'libs/bem-components/common.blocks',
-        'libs/bem-components/desktop.blocks',
-        'libs/bem-components/design/common.blocks',
-        'libs/bem-components/design/desktop.blocks',
+        'node_modules/bem-core/common.blocks',
+        'node_modules/bem-core/desktop.blocks',
+        'node_modules/bem-components/common.blocks',
+        'node_modules/bem-components/desktop.blocks',
+        'node_modules/bem-components/design/common.blocks',
+        'node_modules/bem-components/design/desktop.blocks',
         'common.blocks',
         'desktop.blocks'
     ],
@@ -41,36 +63,34 @@ gulp.task('build', () => {
             //     .pipe(concat(bundle.name + '.bemhtml.deps.js')),
             css: bundle =>
                 bundle.src('css')
-                    .pipe(require('gulp-one-of')())
+                    .pipe(gulpOneOf())
                     .pipe(postcss([
-                        require('postcss-import')(),
-                        require('postcss-each'),
-                        require('postcss-for'),
-                        require('postcss-simple-vars')(),
-                        require('postcss-calc')(),
-                        require('postcss-nested'),
-                        require('rebem-css'),
-                        require('postcss-url')({ url: 'inline' }),
-                        require('autoprefixer')({
-                            browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
-                        }),
-                        require('postcss-reporter')()
+                        postcssImport(),
+                        postcssEach,
+                        postcssFor,
+                        postcssSimpleVars(),
+                        postcssCalc(),
+                        postcssNested,
+                        rebemCss,
+                        postcssUrl({ url: 'rebase' }),
+                        autoprefixer(),
+                        postcssReporter()
                     ]))
                     .pipe(concat(bundle.name + '.min.css'))
-                    .pipe(csso()),
+                    .pipe(gulpif(isProd, csso())),
             js: bundle =>
                 merge(
-                    gulp.src(require.resolve('ym')),
+                    gulp.src(pathToYm),
                     bundle.src('js').pipe(filter(f => ~['vanilla.js', 'browser.js', 'js'].indexOf(f.tech))),
                     bundle.src('js').pipe(filter(file => file.tech === 'bemhtml.js'))
-                        .pipe(concat('browser.bemhtml.js')).pipe(bemhtml())
+                        .pipe(concat('browser.bemhtml.js')).pipe(bemhtml({ elemJsInstances: true }))
                 )
-                    .pipe(uglify())
-                    .pipe(concat(bundle.name + '.min.js')),
+                    .pipe(concat(bundle.name + '.min.js'))
+                    .pipe(gulpif(isProd, uglify())),
             tmpls: bundle =>
                 bundle.src('bemhtml')
                     .pipe(concat('any.bemhtml.js'))
-                    .pipe(bemhtml())
+                    .pipe(bemhtml({ elemJsInstances: true }))
                     .pipe(concat(bundle.name + '.bemhtml.js')),
             html: bundle => {
                 const bemhtmlApply = () => toHtml(bundle.target('tmpls'));

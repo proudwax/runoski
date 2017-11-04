@@ -1,9 +1,0 @@
-:block(message) {
-    &:elem(control) {
-        box-sizing: border-box;
-        padding: 4px;
-
-        font-size: 13px;
-        line-height: 16px;
-    }
-}

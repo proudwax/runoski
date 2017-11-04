@@ -1,4 +1,4 @@
-var techs = {
+const techs = {
         // essential
         fileProvider: require('enb/techs/file-provider'),
         fileMerge: require('enb/techs/file-merge'),
@@ -40,16 +40,13 @@ var techs = {
         { path: 'node_modules/bem-components/desktop.blocks', check: false },
         { path: 'node_modules/bem-components/design/common.blocks', check: false },
         { path: 'node_modules/bem-components/design/desktop.blocks', check: false },
-
-        { path: 'node_modules/bem-forms/common.blocks', check: false },
-        
         'common.blocks',
         'desktop.blocks',
         'themes.blocks'
     ];
 
 module.exports = function(config) {
-    var isProd = process.env.YENV === 'production';
+    const isProd = process.env.YENV === 'production';
 
     config.nodes('*.bundles/*', function(nodeConfig) {
         nodeConfig.addTechs([
@@ -62,6 +59,7 @@ module.exports = function(config) {
             // css
             [techs.postcss, {
                 target: '?.css',
+                oneOfSourceSuffixes: ['post.css', 'css'],
                 plugins: techs.postcssPlugins
             }],
 
@@ -120,7 +118,7 @@ module.exports = function(config) {
                 target: '?.browser.bemhtml.js',
                 filesTarget: '?.bemhtml.files',
                 sourceSuffixes: ['bemhtml', 'bemhtml.js'],
-                elemJsInstances : true
+                engineOptions : { elemJsInstances : true }
             }],
 
             // js
