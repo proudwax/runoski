@@ -1,0 +1,15 @@
+:block(catalog) {
+    &:elem(content) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        margin-left: -7px;
+        margin-right: -7px;
+    }
+
+    &:elem(item) {
+        width: 50%;
+        overflow: hidden;
+    }
+}

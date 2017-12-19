@@ -14,7 +14,7 @@ module.exports = {
                     templates: {
                         'bemjson.js': '.bem/templates/bemjson.js',
                     },
-                    techs: ['css', 'js'],
+                    techs: ['post.css', 'js', 'deps.js', 'bemtree.js'],
                     levels: {
                         'desktop.bundles': {
                             techs: [

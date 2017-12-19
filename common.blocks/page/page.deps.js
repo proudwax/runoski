@@ -3,6 +3,7 @@
         { block: 'fonts', mods: { 'system-ui': true } },
     ],
     shouldDeps: [
-        'content'
+        'content',
+        'catalog'
     ]
 })
