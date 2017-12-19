@@ -54,8 +54,31 @@ block('catalog-item').content()(function() {
                     ]
                 },
                 {
-                    elem: 'price',
-                    content: '15 руб./1 шт.'
+                    elem: 'footer',
+                    content: [
+                        {
+                            elem: 'price',
+                            content: '15 руб./1 шт.'
+                        },
+                        {
+                            elem: 'action',
+                            content: [
+                                {
+                                    block: 'button',
+                                    mix: [{ block: 'order', js: { id: 'order' } }, { block: 'order', elem: 'link' }],
+                                    mods: {
+                                        theme: 'islands',
+                                        size: 'l',
+                                        type: 'link',
+                                        view: 'action'
+                                    },
+                                    url: '#order',
+                                    text: 'Купить'
+                                }
+
+                            ]
+                        }
+                    ]
                 }
             ]
         }

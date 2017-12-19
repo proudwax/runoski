@@ -11,3 +11,4 @@ provide(bemDom.declBlock(this.name, {
 }));
 
 });
+

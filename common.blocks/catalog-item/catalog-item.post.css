@@ -66,6 +66,14 @@
         margin: 0 8px 8px 0;
     }
 
+    &:elem(footer) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+    }
+
     &:elem(price) {
         font-size: 20px;
         line-height: 24px;

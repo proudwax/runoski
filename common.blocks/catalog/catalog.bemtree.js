@@ -14,6 +14,9 @@ block('catalog').content()(function() {
         },
         {
             elem: 'footer'
+        },
+        {
+            block: 'order'
         }
     ];
 });

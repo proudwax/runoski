@@ -3,6 +3,7 @@
     ],
     shouldDeps: [
         { elem: 'content' },
-        { elem: 'footer' }
+        { elem: 'footer' },
+        'order'
     ]
 })
