@@ -7,7 +7,14 @@ block('order').content()(function() {
                 autoclosable: true,
                 theme: 'islands'
             },
-            content: 'some information'
+            content: [
+                {
+                    block: 'form',
+                    mods: { order: true },
+                    method: 'post',
+                    action: '#send'
+                }
+            ]
         }
     ]
 });

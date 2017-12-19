@@ -76,7 +76,7 @@
 
     &:elem(price) {
         font-size: 20px;
-        line-height: 24px;
+        line-height: 32px;
         font-weight: 600;
     }
 }

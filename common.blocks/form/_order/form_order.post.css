@@ -1,0 +1,24 @@
+:block(form):mod(order) {
+    box-sizing: border-box;
+
+    max-width: 600px;
+    width: 80vw;
+
+    padding: 16px;
+
+    :block(form){
+        &:elem(title) {
+            font-size: 18px;
+            line-height: 24px;
+    
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        &:elem(footer) {
+            padding-top: 8px;
+
+            text-align: right;
+        }
+    }
+}

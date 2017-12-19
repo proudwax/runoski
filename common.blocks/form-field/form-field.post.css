@@ -1,0 +1,26 @@
+:block(form-field) { 
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:elem(label) {
+        box-sizing: border-box;
+        max-width: 100px;
+
+        flex-shrink: 1;
+        flex-grow: 1;
+
+        padding-right: 8px;
+
+        text-align: right;
+    }
+    &:elem(control) {
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+}
