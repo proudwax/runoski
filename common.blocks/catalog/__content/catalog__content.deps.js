@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
-        'catalog-item'
+        'catalog-item',
+        'mq'
     ]
 })

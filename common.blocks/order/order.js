@@ -5,14 +5,15 @@ provide(bemDom.declBlock(this.name, {
         js: {
             inited: function() {
                 var _this = this;
-                this._modal = this;
-                this._link = this._elem('link').findMixedBlock(Button);
 
                 this._elems('link').map(function (link) {
-                    link._events(Button).on('click', function (e) { 
+                    /* link._domEvents(Button).on('click', function (e) {
                         e.preventDefault();
+                    }); */
+                    
+                    link._events(Button).on('click', function (e) {
                         _this._elem('modal').findMixedBlock(Modal).setMod('visible', true);
-                     });
+                    });
                 });
             }
         }

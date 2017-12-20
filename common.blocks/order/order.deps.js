@@ -4,7 +4,8 @@
             block: 'modal',
             mods: {
                 autoclosable: true,
-                theme: 'islands'
+                theme: 'islands',
+                view: 'close'
             }
         },
         {

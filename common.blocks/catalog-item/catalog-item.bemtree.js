@@ -65,17 +65,16 @@ block('catalog-item').content()(function() {
                             content: [
                                 {
                                     block: 'button',
-                                    mix: [{ block: 'order', js: { id: 'order' } }, { block: 'order', elem: 'link' }],
+                                    mix: [{ block: 'order', js: { id: 'order' } }, { block: 'order', elem: 'link' }, { block: 'link', js: true, mods: { pseudo: true } }],
                                     mods: {
                                         theme: 'islands',
                                         size: 'l',
                                         type: 'link',
                                         view: 'action'
                                     },
-                                    url: '#order',
+                                    url: '/order',
                                     text: 'Купить'
                                 }
-
                             ]
                         }
                     ]

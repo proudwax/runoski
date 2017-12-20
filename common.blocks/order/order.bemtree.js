@@ -5,7 +5,8 @@ block('order').content()(function() {
             mix: { block: this.block, elem: 'modal' },
             mods: {
                 autoclosable: true,
-                theme: 'islands'
+                theme: 'islands',
+                has: 'close'
             },
             content: [
                 {

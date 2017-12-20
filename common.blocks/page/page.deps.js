@@ -1,6 +1,6 @@
 ({
     mustDeps: [
-        { block: 'fonts', mods: { 'system-ui': true } },
+        { block: 'fonts', mods: { 'system-ui': true } }
     ],
     shouldDeps: [
         'content',

@@ -18,6 +18,11 @@
         padding-right: 8px;
 
         text-align: right;
+
+        &:after {
+            display: inline-block;
+            content: ':'
+        }
     }
     &:elem(control) {
         flex-shrink: 1;
