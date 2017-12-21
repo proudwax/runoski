@@ -25,7 +25,7 @@ block('catalog-item').content()(function() {
                         },
                         {
                             elem: 'details-value',
-                            content: 'A-8889-1'
+                            content: 'A-8889-1' 
                         },
                         {
                             elem: 'details-label',
@@ -65,7 +65,7 @@ block('catalog-item').content()(function() {
                             content: [
                                 {
                                     block: 'button',
-                                    mix: [{ block: 'order', js: { id: 'order' } }, { block: 'order', elem: 'link' }, { block: 'link', js: true, mods: { pseudo: true } }],
+                                    mix: [{ block: 'order', js: { id: 'order' } }, { block: 'order', elem: 'link', js: { model: 'A-8889-1' + Math.random() } }, { block: 'link', js: true, mods: { pseudo: true } }],
                                     mods: {
                                         theme: 'islands',
                                         size: 'l',

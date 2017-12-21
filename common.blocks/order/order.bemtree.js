@@ -6,7 +6,7 @@ block('order').content()(function() {
             mods: {
                 autoclosable: true,
                 theme: 'islands',
-                has: 'close'
+                'has-close': true
             },
             content: [
                 {

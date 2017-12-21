@@ -1,7 +1,9 @@
 block('modal').elem('close')(
-    tag()('span'),
+    tag()('a'),
 
-    js()(true),
-
-    // mix()({ block: 'link', mods: { pseudo: true }, js: true })
+    addAttrs()(function () {
+        return {
+            href: '#close'
+        }
+    })
 )

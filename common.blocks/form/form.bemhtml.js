@@ -1,5 +1,6 @@
 block('form')(
     tag()('form'),
+    js()(true),
 
     addAttrs()((node, json) => {
         return {

@@ -17,6 +17,6 @@
                 type: 'submit'
             }
         },
-        'form-field'
+        { block: 'form-field', mods: { type: 'input', required: true, validate: 'phone' } }
     ]
 })

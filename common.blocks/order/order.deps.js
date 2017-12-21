@@ -5,7 +5,7 @@
             mods: {
                 autoclosable: true,
                 theme: 'islands',
-                view: 'close'
+                'has-close': true
             }
         },
         {

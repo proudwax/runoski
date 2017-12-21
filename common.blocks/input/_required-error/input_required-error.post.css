@@ -1,0 +1,7 @@
+:block(input):mod(theme islands){
+    &:block(input):mod(required-error) {
+        &:before {
+            box-shadow: 0 0 0 1px #c00, inset 0 0 0 1px #c00;
+        }
+    }
+}

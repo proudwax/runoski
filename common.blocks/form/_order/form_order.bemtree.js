@@ -14,32 +14,7 @@ block('form').mod('order', true).content()(function() {
             content: [
                 {
                     block: 'form-field',
-                    mods: { required: true, validate: 'phone' },
-                    content: [
-                        {
-                            elem: 'label',
-                            content: 'Phone'
-                        },
-                        {
-                            elem: 'control',
-                            content: [
-                                {
-                                    block: 'input',
-                                    mods: {
-                                        theme: 'islands',
-                                        size: 'l',
-                                        width: 'available',
-                                        'has-clear': true
-                                    },
-                                    placeholder: 'Phone'
-                                }
-                            ]    
-                        }
-                    ]
-                },
-                {
-                    block: 'form-field',
-                    mods: { required: true },
+                    mods: { type: 'input', required: true },
                     content: [
                         {
                             elem: 'label',
@@ -56,9 +31,37 @@ block('form').mod('order', true).content()(function() {
                                         width: 'available',
                                         'has-clear': true
                                     },
+                                    name: 'name',
                                     placeholder: 'Name' 
                                 }
                             ] 
+                        }
+                    ]
+                },
+                {
+                    block: 'form-field',
+                    mods: { type: 'input', required: true, validate: 'phone' },
+                    js: { pattern: '+7(000)000-00-00' },
+                    content: [
+                        {
+                            elem: 'label',
+                            content: 'Phone'
+                        },
+                        {
+                            elem: 'control',
+                            content: [
+                                {
+                                    block: 'input',
+                                    mods: {
+                                        theme: 'islands',
+                                        size: 'l',
+                                        width: 'available',
+                                        'has-clear': true
+                                    },
+                                    name: 'phone',
+                                    placeholder: 'Phone'
+                                }
+                            ]
                         }
                     ]
                 }

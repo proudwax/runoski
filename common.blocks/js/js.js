@@ -1,10 +1,10 @@
-modules.define('form-field', ['i-bem-dom'], function(provide, bemDom) {
+modules.define('js', ['i-bem-dom'], function(provide, bemDom) {
 
 provide(bemDom.declBlock(this.name, {
     onSetMod: {
         js: {
             inited: function() {
-                // console.log(this.getChildBlock());
+                
             }
         }
     }
