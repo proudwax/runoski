@@ -38,19 +38,17 @@ provide(bemDom.declBlock(this.name, {
         this.showMessage().showSpin();
 
         $.ajax({
-            // method: form.method,
-            method: 'get',
+            method: form.method,
             url: form.action,
             data: this.domElem.serialize(),
             dataType: 'json'
         })
         .done(function (res) {
-            // console.log(res);
-
             _this.setMessage(res);
         })
         .fail(function (res) {
-            console.log({ 'status': 'error', 'info': res.responseText });
+            res.message = res.status == 404 && 'Ошибка в отправление запроса,<br> офирмите заказ через оператора';
+            _this.setMessage(res);
         });
     },
 

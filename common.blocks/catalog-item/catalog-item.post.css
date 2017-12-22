@@ -75,7 +75,6 @@
     }
 }
 
-
 @media (--medium) {
      :block(catalog-item) {
         flex-direction: row;
@@ -97,6 +96,7 @@
 
     }
 }
+
 @media (--large) {
      :block(catalog-item) {
  

@@ -22,7 +22,7 @@ provide(bemDom.declBlock(this.name, {
     },
 
     getValid: function () {
-        return this.getValidate() != undefined ? this.getValidate() : !!this.getVal();
+        return this.hasMod('validate') ? this.getValidate() : !!this.getVal();
     }
 
 }));

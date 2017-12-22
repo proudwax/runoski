@@ -12,7 +12,7 @@ block('order').content()(function() {
                 {
                     block: 'form',
                     mods: { order: true },
-                    method: 'post',
+                    method: 'get',
                     action: '/resp-success.json'
                 }
             ]

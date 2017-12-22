@@ -23,7 +23,7 @@ provide(FormField.declMod({ modName: 'validate', modVal: 'phone' }, {
     },
 
     getValidate: function() {
-        return this._valid;
+        return this._valid && !!this.getVal();
     }
 }));
 
