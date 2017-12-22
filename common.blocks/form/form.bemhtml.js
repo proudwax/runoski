@@ -11,5 +11,14 @@ block('form')(
 
     elem('title')(
         tag()('h3')
-    )
+    ),
+
+    content()(_ => {
+        return [
+            applyNext(),
+            {
+                elem: 'message'
+            }
+        ];
+    })
 );

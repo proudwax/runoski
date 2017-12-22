@@ -1,5 +1,5 @@
 ({
     shouldDeps: [
-        { block: 'input', mods: { 'required-error': true } }
+        // { block: 'input', mods: { 'required-error': true } }
     ]
 })

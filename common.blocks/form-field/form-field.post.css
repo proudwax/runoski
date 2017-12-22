@@ -28,4 +28,12 @@
         flex-shrink: 1;
         flex-grow: 1;
     }
+
+    &:mod(required-error){
+         :block(input):mod(theme islands) {
+            &:before {
+                box-shadow: 0 0 0 1px #c00, inset 0 0 0 1px #c00;
+            }
+        }
+    }
 }

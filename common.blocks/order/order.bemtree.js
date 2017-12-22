@@ -13,7 +13,7 @@ block('order').content()(function() {
                     block: 'form',
                     mods: { order: true },
                     method: 'post',
-                    action: '#send'
+                    action: '/resp-success.json'
                 }
             ]
         }

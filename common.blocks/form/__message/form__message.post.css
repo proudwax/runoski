@@ -1,0 +1,27 @@
+:block(form){
+    &:elem(message) {
+        box-sizing: border-box;
+        display: none;
+
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: center;
+        
+        padding: 16px;
+        
+        background-color: #fff;
+
+        &:mod(visible) {
+            display: flex;
+        }
+    }
+}
