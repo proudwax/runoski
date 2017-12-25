@@ -1,0 +1,13 @@
+:block(logo) {
+    position: relative;
+    display: inline-block;
+
+    width: 200px;
+    height: 100px;
+
+    font-size: 0;
+
+    &:elem(image) {
+        max-width: 100%;
+    }
+}

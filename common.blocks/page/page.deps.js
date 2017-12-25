@@ -4,6 +4,8 @@
     ],
     shouldDeps: [
         'content',
-        'catalog'
+        'catalog',
+        'header',
+        'footer'
     ]
 })

@@ -1,0 +1,39 @@
+:block(header) {
+    margin-bottom: 40px;
+
+    &:elem(top) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &:elem(nav) {
+        margin-top: 16px;
+        background-color: #ffdb4d;
+        width: 100%;
+    }
+}
+
+@media (--medium) {
+    :block(header) {
+        &:elem(top) {
+            justify-content: space-between;
+        }
+    }    
+}
+
+@media screen and (max-width:1200px) {
+    :block(header) {
+        &:elem(top) {
+            box-sizing: border-box;
+            padding-left: 16px;
+            padding-right: 16px;
+
+        } 
+    }
+}

@@ -1,12 +1,14 @@
 block('page').content()(function() {
     return [
         {
-            block: 'content',
-            content: [
-                {
-                    block: 'catalog'
-                }
-            ]
+            block: 'header'
+        },
+        {
+            block: 'catalog',
+            mix: { block: 'content' }
+        },
+        {
+            block: 'footer'
         }
     ];
 });

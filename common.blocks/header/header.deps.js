@@ -1,0 +1,7 @@
+({
+    shouldDeps: [
+        'logo',
+        'contacts',
+        'nav'
+    ]
+})

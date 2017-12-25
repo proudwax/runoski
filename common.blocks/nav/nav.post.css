@@ -1,0 +1,46 @@
+:block(nav) {
+    &:elem(list) {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        max-width: 1200px;
+        margin: 0 auto;
+
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    &:elem(list-item) {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25px;
+        color: #333;
+        text-decoration: none;
+
+        transition: color .25s ease-out;
+
+        &:hover {
+            color: #c00;
+        }
+
+        margin-right: 16px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+}
+
+@media screen and (max-width:1200px) {
+     :block(nav) {
+        box-sizing: border-box;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
