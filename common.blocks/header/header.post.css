@@ -12,6 +12,10 @@
         margin: 0 auto;
     }
 
+    &:elem(logo) {
+        font-size: 0;
+    }
+
     &:elem(nav) {
         margin-top: 16px;
         background-color: #ffdb4d;

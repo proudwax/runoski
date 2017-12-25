@@ -12,6 +12,11 @@ block('nav').content()(function() {
                     elem: 'list-item',
                     url: '#2',
                     content: 'Контакты'
+                },
+                {
+                    elem: 'list-item',
+                    url: '#3',
+                    content: 'Доставка'
                 }
             ]
         },

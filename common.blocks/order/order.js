@@ -8,9 +8,9 @@ provide(bemDom.declBlock(this.name, {
                     formOrder = this.findChildBlock({ block: Form, modName: 'order', modVal: true });
 
                     this._elems('link').map(function (link) {
-                    /* link._domEvents(Button).on('click', function (e) {
+                    link._domEvents(Button).on('click', function (e) {
                         e.preventDefault();
-                    }); */
+                    });
                     
                     link._events(Button).on('click', function (e) {
                         formOrder._elem('model').domElem[0].value = link.params.model;
