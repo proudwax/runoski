@@ -19,7 +19,8 @@
         tech: 'js',
         mustDeps: [
             { block: 'spin', tech: 'bemhtml' },
-            // { elem: 'message', tech: ['bemhtml', 'bemtree'] }
+            { block: 'form', elem: 'message', tech: 'bemhtml' },
+            { block: 'form', elem: 'message', tech: 'bemtree' }
 		]
     }
 ])

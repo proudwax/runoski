@@ -60,7 +60,7 @@ provide(bemDom.declBlock(this.name, {
 
     setMessage: function (res) {
         bemDom.update(this._elem('message').domElem, res.message);
-
+        console.log(BEMHTML.apply(BEMTREE.apply({ elem: 'message', data: res })));
         return this;
     },
 
