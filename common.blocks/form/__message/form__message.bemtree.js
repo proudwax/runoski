@@ -1,12 +1,17 @@
-block('form').elem('message').content()(function(node) {
-    return [
-        {
-            elem: 'title',
-            content: node.title
-        },
-        {
-            elem: 'content',
-            content: node.content
-        }
-    ];
-});
+block('form').elem('message')(
+    content()(function(node) {
+        var data = this.ctx.data || {};
+        console.log(node);
+    
+        return [
+            {
+                elem: 'title',
+                content: data.title
+            },
+            {
+                elem: 'content',
+                content: data.content
+            }
+        ];
+    })
+)

@@ -26,5 +26,17 @@ block('form-field')(
                 for: node._blockID
             };
         })
+    ),
+
+    match((node, json) => { return node.mods.required; })(
+        elem('label').content()((node, json) => {
+            return [
+                applyNext(),
+                {
+                    tag: 'sup',
+                    content: '*'
+                }
+            ]
+        })
     )
 );

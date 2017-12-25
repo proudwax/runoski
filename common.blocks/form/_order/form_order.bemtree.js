@@ -32,7 +32,8 @@ block('form').mod('order', true).content()(function() {
                                         'has-clear': true
                                     },
                                     name: 'name',
-                                    placeholder: 'Name' 
+                                    placeholder: 'Name', 
+                                    autocomplete: false
                                 }
                             ] 
                         }
@@ -59,7 +60,8 @@ block('form').mod('order', true).content()(function() {
                                         'has-clear': true
                                     },
                                     name: 'phone',
-                                    placeholder: 'Phone'
+                                    placeholder: 'Phone',
+                                    autocomplete: false
                                 }
                             ]
                         }

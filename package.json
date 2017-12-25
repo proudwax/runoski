@@ -38,6 +38,7 @@
     "gulp-one-of": "^1.0.0",
     "gulp-postcss": "^7.0.0",
     "gulp-uglify": "^3.0.0",
+    "jquery-mask-plugin": "^1.14.13",
     "merge2": "^1.1.0",
     "postcss-calc": "^6.0.0",
     "postcss-custom-media": "^6.0.0",
