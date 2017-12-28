@@ -1,4 +1,12 @@
 :block(catalog) {
     max-width: 1200px;
     margin: 0 auto;
+
+    &:mod(loading) {
+        :block(catalog):elem(content){
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
 }
