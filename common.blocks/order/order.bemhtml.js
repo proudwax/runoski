@@ -1,3 +1,3 @@
 block('order')(
-    js()({ id: 'order' })
+    js()({ uniqId: 'order' })
 );

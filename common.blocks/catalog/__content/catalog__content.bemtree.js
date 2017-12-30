@@ -6,10 +6,12 @@ block('catalog').elem('content')(
             var items = data.map(function (item) {
                 return {
                     elem: 'item',
-                    cotent: {
-                        block: 'catalog-item',
-                        data: item
-                    }
+                    content: 
+                        {
+                            block: 'catalog-item',
+                            data: item
+                        }
+                    
                 }
             });
             return items;

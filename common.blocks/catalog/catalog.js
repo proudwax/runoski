@@ -12,17 +12,9 @@ provide(bemDom.declBlock(this.name, {
                     url: "/data.json",
                     dataType: "json"
                 }).done(function (data) {
-                    // console.log(data.data);
+                    console.log(data);
                     _this._elem('content')._replaceContent({ block: 'catalog', elem: 'content', data: data.data });
-                    // _this.delMod('loading');
-                    // bemDom.replace(
-                    //     this.domElem,
-                    //     BEMHTML.apply(BEMTREE.apply({ 
-                    //         block: this._blockName, 
-                    //         elem: 'content', 
-                    //         content: 're' 
-                    //     }))
-                    // );
+                    _this.delMod('loading');
                 });
             }
         },

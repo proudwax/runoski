@@ -41,7 +41,7 @@
     &:elem(details-label) {
         display: inline-block;
         max-width: calc(50% - 8px);
-        width: 70px;
+        width: 85px;
         
         margin: 0 8px 8px 0;
         

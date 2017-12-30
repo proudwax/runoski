@@ -1,11 +1,13 @@
 block('catalog-item').content()(function() {
+    var data = this.ctx.data || {};
+
     return [
         {
             elem: 'image',
             content: [
                 {
                     block: 'image',
-                    url: 'https://носки-ивтекс.рф/i/products//19038/muzhskie_noski_teplye_pobeda_a_525_bambuk_medium.jpg'
+                    url: data.img["10000x150"]
                 }
             ]
         },
@@ -14,42 +16,42 @@ block('catalog-item').content()(function() {
             content: [
                 {
                     elem: 'title',
-                    content: 'Носки мужские'
+                    content: data.brand.name + ' ' + data.model.name
                 },
                 {
                     elem: 'details',
                     content: [
                         {
                             elem: 'details-label',
-                            content: 'Модель'
+                            content: 'Двигатель'
                         },
                         {
                             elem: 'details-value',
-                            content: 'A-8889-1' 
+                            content: data.engine.volume.short + ' ' + data.engine.type
                         },
                         {
                             elem: 'details-label',
-                            content: 'Марка'
+                            content: 'Коробка'
                         },
                         {
                             elem: 'details-value',
-                            content: 'BUBAH'
+                            content: data.gearbox.name
                         },
                         {
                             elem: 'details-label',
-                            content: 'Размер'
+                            content: 'Год'
                         },
                         {
                             elem: 'details-value',
-                            content: '42-48/28-32см'
+                            content: data.year
                         },
                         {
                             elem: 'details-label',
-                            content: 'Состав'
+                            content: 'Пробег'
                         },
                         {
                             elem: 'details-value',
-                            content: '80%бамбук 15%полиамид 5%эластан'
+                            content: data.mileage
                         }
                     ]
                 },
@@ -58,14 +60,14 @@ block('catalog-item').content()(function() {
                     content: [
                         {
                             elem: 'price',
-                            content: '15 руб./1 шт.'
+                            content: data.price.ust
                         },
                         {
                             elem: 'action',
                             content: [
                                 {
                                     block: 'button',
-                                    mix: [{ block: 'order', js: { id: 'order' } }, { block: 'order', elem: 'link', js: { model: 'A-8889-1' + Math.random() } }],
+                                    mix: [{ block: 'order', js: { uniqId: 'order' } }, { block: 'order', elem: 'link', js: { model: data.id.sap } }],
                                     mods: {
                                         theme: 'islands',
                                         size: 'l',
