@@ -16,6 +16,20 @@ provide(bemDom.declBlock(this.name, {
                     _this._elem('content')._replaceContent({ block: 'catalog', elem: 'content', data: data.data });
                     _this.delMod('loading');
                 });
+
+                setTimeout(function () {
+
+                    $.ajax({
+                        type: "GET",
+                        url: "/data.json",
+                        dataType: "json"
+                    }).done(function (data) {
+                        console.log(data);
+                        _this._elem('content')._appendContent({ block: 'catalog', elem: 'content', data: data.data });
+                        _this.delMod('loading');
+                    });
+                    
+                }, 3000);
             }
         },
 

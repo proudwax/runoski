@@ -24,6 +24,15 @@ provide(bemDom.declElem('catalog', 'content', {
         );
 
         return this;
+    },
+
+    _appendContent: function (content) {
+        bemDom.append(
+            this.domElem,
+            BEMHTML.apply(BEMTREE.apply(content))
+        );
+
+        return this;
     }
 }));
 
